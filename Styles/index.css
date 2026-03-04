@@ -1,0 +1,307 @@
+/* ===============================
+   RESET & GLOBAL
+   =============================== */
+
+/* Reset default browser */
+* {
+    margin: 0;                    /* hapus margin bawaan */
+    padding: 0;                   /* hapus padding bawaan */
+    box-sizing: border-box;       /* hitung padding & border ke ukuran */
+}
+
+/* Pengaturan dasar HTML */
+html {
+    font-size: 16px;              /* 1rem = 16px */
+    scroll-behavior: smooth;      /* scroll halus */
+}
+
+/* Body utama */
+body {
+    font-family: 'Poppins', sans-serif;  /* font utama */
+    background-image: url("../assets/img/info-card-2.jpg");
+    background-size: cover;        /* background menutup layar */
+    background-position: center;   /* posisi tengah */
+    background-repeat: no-repeat;  /* tidak mengulang */
+    min-height: 100vh;             /* tinggi minimal layar */
+    overflow-x: hidden;            /* cegah scroll horizontal */
+    color: white;                  /* warna teks default */
+}
+
+/* ===============================
+   OVERLAY
+   =============================== */
+
+.overlay {
+    position: fixed;               /* tetap di layar */
+    inset: 0;                      /* full screen */
+    background: rgba(49,49,49,0.55); /* gelap transparan */
+    z-index: -1;                   /* di belakang konten */
+}
+
+/* ===============================
+   NAVBAR
+   =============================== */
+
+.top-navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 1200px;
+    background: white;
+    padding: 14px 32px;
+    border-radius: 999px;          /* oval */
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+/* Logo kiri */
+.logo {
+    flex: 1;                       /* dorong menu ke kanan */
+}
+
+.logo h1 {
+    color: #333;
+    font-size: 20px;
+}
+
+/* Menu kanan */
+.top-navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+}
+
+.top-navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+/* ===============================
+   BUTTON
+   =============================== */
+
+.btn {
+    display: inline-block;
+    padding: 12px 32px;
+    background: white;
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 999px;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: #00c6ff;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ===============================
+   HERO SECTION
+   =============================== */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 140px;            /* ruang navbar */
+}
+
+.hero-content {
+    text-align: center;
+}
+
+/* Foto profil */
+.profile {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid white;
+    margin: auto auto 24px;
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===============================
+   ABOUT SECTION
+   =============================== */
+
+.about {
+    min-height: 100vh;
+    padding: 120px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    max-width: 1100px;
+    width: 100%;
+}
+
+/* Foto about */
+.about-image {
+    grid-row: 1 / span 2;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 4px solid white;
+    object-fit: cover;
+}
+
+/* Text about */
+.about-text {
+    grid-column: 2;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* Experience */
+.about-experience {
+    grid-column: 2;
+    margin-top: 32px;
+}
+
+.experience-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Card experience */
+.card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+.experience-logo img {
+    width: 56px;
+    height: 56px;
+}
+
+/* ===============================
+   FIND ME (FIX ICON KE SAMPING)
+   =============================== */
+
+.findme {
+    grid-column: 1 / -1;           /* full lebar grid */
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.findme-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 0 16px;               /* anti tabrakan */
+}
+
+/* Card Find Me */
+.findme-card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 40px 32px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+/* ===== SOCIAL ICONS (PENTING) ===== */
+
+.social-icons {
+    display: flex;                /* icon sejajar */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: nowrap;            /* ❗ cegah turun ke bawah */
+}
+
+.social-icons a {
+    width: 56px;
+    height: 56px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;               /* ❗ cegah icon mengecil */
+    transition: 0.3s ease;
+}
+
+.social-icons img {
+    width: 28px;
+    height: 28px;
+}
+
+.social-icons a:hover {
+    background: #00c6ff;
+    transform: translateY(-4px) scale(1.05);
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+
+@media (max-width: 768px) {
+
+    .about-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-image,
+    .about-text,
+    .about-experience {
+        grid-column: 1;
+    }
+
+    .card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Find Me Mobile */
+    .findme-card {
+        padding: 32px 24px;
+    }
+
+    .social-icons a {
+        width: 48px;
+        height: 48px;
+    }
+
+    .social-icons img {
+        width: 24px;
+        height: 24px;
+    }
+}
