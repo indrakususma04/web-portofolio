@@ -1,307 +1,356 @@
 /* ===============================
-   RESET & GLOBAL
-   =============================== */
+RESET & GLOBAL
+=============================== */
 
-/* Reset default browser */
-* {
-    margin: 0;                    /* hapus margin bawaan */
-    padding: 0;                   /* hapus padding bawaan */
-    box-sizing: border-box;       /* hitung padding & border ke ukuran */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* Pengaturan dasar HTML */
-html {
-    font-size: 16px;              /* 1rem = 16px */
-    scroll-behavior: smooth;      /* scroll halus */
+html{
+    font-size:16px;
+    scroll-behavior:smooth;
 }
 
-/* Body utama */
-body {
-    font-family: 'Poppins', sans-serif;  /* font utama */
-    background-image: url("../assets/img/info-card-2.jpg");
-    background-size: cover;        /* background menutup layar */
-    background-position: center;   /* posisi tengah */
-    background-repeat: no-repeat;  /* tidak mengulang */
-    min-height: 100vh;             /* tinggi minimal layar */
-    overflow-x: hidden;            /* cegah scroll horizontal */
-    color: white;                  /* warna teks default */
-}
-
-/* ===============================
-   OVERLAY
-   =============================== */
-
-.overlay {
-    position: fixed;               /* tetap di layar */
-    inset: 0;                      /* full screen */
-    background: rgba(49,49,49,0.55); /* gelap transparan */
-    z-index: -1;                   /* di belakang konten */
+body{
+    font-family:'Poppins',sans-serif;
+    background-image:url("../assets/img/info-card-2.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    min-height:100vh;
+    overflow-x:hidden;
+    color:white;
+    line-height:1.6;
 }
 
 /* ===============================
-   NAVBAR
-   =============================== */
+OVERLAY
+=============================== */
 
-.top-navbar {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 40px);
-    max-width: 1200px;
-    background: white;
-    padding: 14px 32px;
-    border-radius: 999px;          /* oval */
-    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-}
-
-/* Logo kiri */
-.logo {
-    flex: 1;                       /* dorong menu ke kanan */
-}
-
-.logo h1 {
-    color: #333;
-    font-size: 20px;
-}
-
-/* Menu kanan */
-.top-navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 28px;
-}
-
-.top-navbar a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.55);
+    z-index:-1;
 }
 
 /* ===============================
-   BUTTON
-   =============================== */
+NAVBAR
+=============================== */
 
-.btn {
-    display: inline-block;
-    padding: 12px 32px;
-    background: white;
-    color: #333;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 999px;
-    transition: 0.3s ease;
+.top-navbar{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:calc(100% - 40px);
+    max-width:1200px;
+    padding:14px 32px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:rgba(255,255,255,0.95);
+    border-radius:999px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    backdrop-filter:blur(10px);
+
+    z-index:1000;
 }
 
-.btn:hover {
-    background: #00c6ff;
-    color: white;
-    transform: translateY(-2px);
+.logo h1{
+    font-size:18px;
+    color:#222;
 }
 
-/* ===============================
-   HERO SECTION
-   =============================== */
+/* menu */
 
-.hero {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 140px;            /* ruang navbar */
+.top-navbar ul{
+    list-style:none;
+    display:flex;
+    gap:24px;
 }
 
-.hero-content {
-    text-align: center;
+.top-navbar a{
+    text-decoration:none;
+    font-weight:500;
+    color:#333;
+    font-size:14px;
+    transition:.3s;
 }
 
-/* Foto profil */
-.profile {
-    width: 260px;
-    height: 260px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 4px solid white;
-    margin: auto auto 24px;
-}
-
-.profile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.top-navbar a:hover{
+    color:#00c6ff;
 }
 
 /* ===============================
-   ABOUT SECTION
-   =============================== */
+BUTTON
+=============================== */
 
-.about {
-    min-height: 100vh;
-    padding: 120px 20px;
-    display: flex;
-    justify-content: center;
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 32px;
+    background:white;
+    color:#333;
+    text-decoration:none;
+    font-weight:600;
+    border-radius:999px;
+    transition:.3s;
 }
 
-.about-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 60px;
-    max-width: 1100px;
-    width: 100%;
-}
-
-/* Foto about */
-.about-image {
-    grid-row: 1 / span 2;
-    display: flex;
-    justify-content: center;
-}
-
-.about-image img {
-    width: 260px;
-    height: 260px;
-    border-radius: 50%;
-    border: 4px solid white;
-    object-fit: cover;
-}
-
-/* Text about */
-.about-text {
-    grid-column: 2;
-    font-size: 18px;
-    line-height: 1.8;
-}
-
-/* Experience */
-.about-experience {
-    grid-column: 2;
-    margin-top: 32px;
-}
-
-.experience-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-/* Card experience */
-.card {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 16px 20px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 16px;
-    backdrop-filter: blur(8px);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-}
-
-.experience-logo img {
-    width: 56px;
-    height: 56px;
+.btn:hover{
+    background:#00c6ff;
+    color:white;
+    transform:translateY(-3px);
 }
 
 /* ===============================
-   FIND ME (FIX ICON KE SAMPING)
-   =============================== */
+HERO SECTION
+=============================== */
 
-.findme {
-    grid-column: 1 / -1;           /* full lebar grid */
-    margin-top: 80px;
-    display: flex;
-    justify-content: center;
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:140px 20px 60px;
 }
 
-.findme-container {
-    width: 100%;
-    max-width: 600px;
-    padding: 0 16px;               /* anti tabrakan */
+.hero-content{
+    text-align:center;
+    max-width:600px;
 }
 
-/* Card Find Me */
-.findme-card {
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 24px;
-    padding: 40px 32px;
-    text-align: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+.profile{
+    width:220px;
+    height:220px;
+    margin:auto;
+    margin-bottom:25px;
+    border-radius:50%;
+    overflow:hidden;
+    border:4px solid white;
 }
 
-/* ===== SOCIAL ICONS (PENTING) ===== */
-
-.social-icons {
-    display: flex;                /* icon sejajar */
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: nowrap;            /* ❗ cegah turun ke bawah */
+.profile img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
-.social-icons a {
-    width: 56px;
-    height: 56px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;               /* ❗ cegah icon mengecil */
-    transition: 0.3s ease;
+.hero h1{
+    font-size:36px;
+    margin-bottom:10px;
 }
 
-.social-icons img {
-    width: 28px;
-    height: 28px;
-}
-
-.social-icons a:hover {
-    background: #00c6ff;
-    transform: translateY(-4px) scale(1.05);
+.hero p{
+    opacity:.85;
 }
 
 /* ===============================
-   RESPONSIVE
-   =============================== */
+ABOUT SECTION
+=============================== */
 
-@media (max-width: 768px) {
+.about{
+    padding:120px 20px;
+    display:flex;
+    justify-content:center;
+}
 
-    .about-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+.about-container{
+    width:100%;
+    max-width:1100px;
 
-    .about-image,
-    .about-text,
-    .about-experience {
-        grid-column: 1;
-    }
+    display:grid;
+    grid-template-columns:1fr 2fr;
+    gap:60px;
+}
 
-    .card {
-        flex-direction: column;
-        text-align: center;
-    }
+/* image */
 
-    /* Find Me Mobile */
-    .findme-card {
-        padding: 32px 24px;
-    }
+.about-image{
+    grid-row:1 / span 2;
+    display:flex;
+    justify-content:center;
+}
 
-    .social-icons a {
-        width: 48px;
-        height: 48px;
-    }
+.about-image img{
+    width:240px;
+    height:240px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid white;
+}
 
-    .social-icons img {
-        width: 24px;
-        height: 24px;
-    }
+/* text */
+
+.about-text{
+    font-size:17px;
+    line-height:1.8;
+}
+
+/* ===============================
+EXPERIENCE
+=============================== */
+
+.about-experience{
+    margin-top:20px;
+}
+
+.experience-cards{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.card{
+    display:flex;
+    align-items:center;
+    gap:16px;
+
+    padding:16px 20px;
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+
+    border-radius:16px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.35);
+}
+
+.experience-logo img{
+    width:50px;
+}
+
+/* ===============================
+FIND ME
+=============================== */
+
+.findme{
+    grid-column:1 / -1;
+    margin-top:80px;
+    display:flex;
+    justify-content:center;
+}
+
+.findme-container{
+    width:100%;
+    max-width:600px;
+}
+
+.findme-card{
+    text-align:center;
+    padding:40px;
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
+
+    border-radius:24px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.35);
+}
+
+.findme-card p{
+    margin:10px 0 20px;
+}
+
+/* social */
+
+.social-icons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.social-icons a{
+    width:55px;
+    height:55px;
+
+    background:white;
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    transition:.3s;
+}
+
+.social-icons img{
+    width:26px;
+}
+
+.social-icons a:hover{
+    background:#00c6ff;
+    transform:translateY(-5px) scale(1.05);
+}
+
+/* ===============================
+TABLET
+=============================== */
+
+@media (max-width:900px){
+
+.about-container{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+.about-image{
+    grid-row:auto;
+}
+
+.card{
+    flex-direction:column;
+    text-align:center;
+}
+
+}
+
+/* ===============================
+MOBILE
+=============================== */
+
+@media (max-width:600px){
+
+.top-navbar{
+    padding:12px 20px;
+}
+
+.top-navbar ul{
+    gap:14px;
+}
+
+.hero h1{
+    font-size:26px;
+}
+
+.profile{
+    width:160px;
+    height:160px;
+}
+
+.about{
+    padding:100px 20px;
+}
+
+.findme-card{
+    padding:30px 20px;
+}
+
+.social-icons a{
+    width:48px;
+    height:48px;
+}
+
+.social-icons img{
+    width:22px;
+}
+
 }
