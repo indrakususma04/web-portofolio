@@ -2,88 +2,94 @@
 RESET & GLOBAL
 =============================== */
 
+/* Reset default browser agar semua elemen konsisten */
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+    margin:0; /* menghapus margin bawaan browser */
+    padding:0; /* menghapus padding bawaan browser */
+    box-sizing:border-box; /* ukuran elemen termasuk padding dan border */
 }
 
+/* Pengaturan dasar halaman */
 html{
-    font-size:16px;
-    scroll-behavior:smooth;
+    font-size:16px; /* ukuran dasar font (1rem = 16px) */
+    scroll-behavior:smooth; /* scroll halaman menjadi halus */
 }
 
+/* Body utama halaman */
 body{
-    font-family:'Poppins',sans-serif;
-    background-image:url("../assets/img/info-card-2.jpg");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-    min-height:100vh;
-    overflow-x:hidden;
-    color:white;
-    line-height:1.6;
+    font-family:'Poppins',sans-serif; /* font utama website */
+    background-image:url("../assets/img/info-card-2.jpg"); /* background gambar */
+    background-size:cover; /* gambar menutupi seluruh layar */
+    background-position:center; /* posisi gambar di tengah */
+    background-repeat:no-repeat; /* gambar tidak diulang */
+    min-height:100vh; /* tinggi minimal layar penuh */
+    overflow-x:hidden; /* mencegah scroll horizontal */
+    color:white; /* warna teks default */
+    line-height:1.6; /* jarak antar baris teks */
 }
 
 /* ===============================
 OVERLAY
 =============================== */
 
+/* lapisan gelap di atas background */
 .overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.55);
-    z-index:-1;
+    position:fixed; /* posisi tetap mengikuti layar */
+    inset:0; /* memenuhi seluruh layar */
+    background:rgba(0,0,0,0.55); /* warna hitam transparan */
+    z-index:-1; /* berada di belakang semua konten */
 }
 
 /* ===============================
 NAVBAR
 =============================== */
 
+/* navbar utama */
 .top-navbar{
-    position:fixed;
-    top:20px;
-    left:50%;
-    transform:translateX(-50%);
-    width:calc(100% - 40px);
-    max-width:1200px;
-    padding:14px 32px;
+    position:fixed; /* navbar tetap saat scroll */
+    top:20px; /* jarak dari atas */
+    left:50%; /* posisi tengah horizontal */
+    transform:translateX(-50%); /* benar-benar center */
+    width:calc(100% - 40px); /* lebar dikurangi margin kiri kanan */
+    max-width:1200px; /* batas maksimum lebar navbar */
+    padding:14px 32px; /* jarak isi navbar */
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    display:flex; /* layout flexbox */
+    justify-content:space-between; /* logo kiri menu kanan */
+    align-items:center; /* rata tengah vertikal */
 
-    background:rgba(255,255,255,0.95);
-    border-radius:999px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.15);
-    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,0.95); /* warna putih transparan */
+    border-radius:999px; /* membuat bentuk oval */
+    box-shadow:0 10px 30px rgba(0,0,0,0.15); /* bayangan */
+    backdrop-filter:blur(10px); /* efek blur background */
 
-    z-index:1000;
+    z-index:1000; /* memastikan navbar di atas elemen lain */
 }
 
+/* logo */
 .logo h1{
-    font-size:18px;
-    color:#222;
+    font-size:18px; /* ukuran tulisan logo */
+    color:#222; /* warna teks */
 }
 
-/* menu */
+/* menu navbar */
 
 .top-navbar ul{
-    list-style:none;
-    display:flex;
-    gap:24px;
+    list-style:none; /* menghilangkan bullet list */
+    display:flex; /* menu sejajar horizontal */
+    gap:24px; /* jarak antar menu */
 }
 
 .top-navbar a{
-    text-decoration:none;
-    font-weight:500;
-    color:#333;
-    font-size:14px;
-    transition:.3s;
+    text-decoration:none; /* menghilangkan garis bawah link */
+    font-weight:500; /* ketebalan font */
+    color:#333; /* warna teks */
+    font-size:14px; /* ukuran font */
+    transition:.3s; /* animasi hover */
 }
 
 .top-navbar a:hover{
-    color:#00c6ff;
+    color:#00c6ff; /* warna berubah saat hover */
 }
 
 /* ===============================
@@ -91,21 +97,21 @@ BUTTON
 =============================== */
 
 .btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:12px 32px;
-    background:white;
-    color:#333;
-    text-decoration:none;
-    font-weight:600;
-    border-radius:999px;
-    transition:.3s;
+    display:inline-block; /* agar bisa diberi padding */
+    margin-top:20px; /* jarak dari elemen atas */
+    padding:12px 32px; /* ukuran tombol */
+    background:white; /* warna tombol */
+    color:#333; /* warna teks */
+    text-decoration:none; /* hilangkan underline */
+    font-weight:600; /* teks lebih tebal */
+    border-radius:999px; /* bentuk oval */
+    transition:.3s; /* animasi */
 }
 
 .btn:hover{
-    background:#00c6ff;
-    color:white;
-    transform:translateY(-3px);
+    background:#00c6ff; /* warna hover */
+    color:white; /* warna teks hover */
+    transform:translateY(-3px); /* tombol naik sedikit */
 }
 
 /* ===============================
@@ -113,41 +119,43 @@ HERO SECTION
 =============================== */
 
 .hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:140px 20px 60px;
+    min-height:100vh; /* tinggi minimal 1 layar */
+    display:flex; /* flexbox layout */
+    justify-content:center; /* konten di tengah horizontal */
+    align-items:center; /* konten di tengah vertikal */
+    padding:140px 20px 60px; /* ruang untuk navbar */
 }
 
 .hero-content{
-    text-align:center;
-    max-width:600px;
+    text-align:center; /* teks rata tengah */
+    max-width:600px; /* batas lebar konten */
 }
 
+/* foto profil */
+
 .profile{
-    width:220px;
-    height:220px;
-    margin:auto;
-    margin-bottom:25px;
-    border-radius:50%;
-    overflow:hidden;
-    border:4px solid white;
+    width:220px; /* lebar foto */
+    height:220px; /* tinggi foto */
+    margin:auto; /* center */
+    margin-bottom:25px; /* jarak bawah */
+    border-radius:50%; /* membuat lingkaran */
+    overflow:hidden; /* memotong gambar */
+    border:4px solid white; /* border putih */
 }
 
 .profile img{
-    width:100%;
+    width:100%; /* gambar memenuhi container */
     height:100%;
-    object-fit:cover;
+    object-fit:cover; /* gambar tidak gepeng */
 }
 
 .hero h1{
-    font-size:36px;
-    margin-bottom:10px;
+    font-size:36px; /* ukuran judul */
+    margin-bottom:10px; /* jarak bawah */
 }
 
 .hero p{
-    opacity:.85;
+    opacity:.85; /* teks sedikit transparan */
 }
 
 /* ===============================
@@ -155,24 +163,24 @@ ABOUT SECTION
 =============================== */
 
 .about{
-    padding:120px 20px;
+    padding:120px 20px; /* jarak section */
     display:flex;
-    justify-content:center;
+    justify-content:center; /* center container */
 }
 
 .about-container{
     width:100%;
-    max-width:1100px;
+    max-width:1100px; /* lebar maksimal */
 
-    display:grid;
-    grid-template-columns:1fr 2fr;
-    gap:60px;
+    display:grid; /* menggunakan grid layout */
+    grid-template-columns:1fr 2fr; /* kolom kiri kanan */
+    gap:60px; /* jarak antar kolom */
 }
 
-/* image */
+/* gambar about */
 
 .about-image{
-    grid-row:1 / span 2;
+    grid-row:1 / span 2; /* gambar mengambil 2 baris */
     display:flex;
     justify-content:center;
 }
@@ -185,11 +193,16 @@ ABOUT SECTION
     border:4px solid white;
 }
 
-/* text */
+/* teks about */
 
 .about-text{
-    font-size:17px;
-    line-height:1.8;
+    font-size:17px; /* ukuran font */
+    line-height:1.8; /* jarak baris */
+}
+
+/* PARAGRAF ABOUT RATA KIRI DAN KANAN */
+.about-text p{
+    text-align:justify; /* teks rata kiri kanan */
 }
 
 /* ===============================
@@ -197,13 +210,13 @@ EXPERIENCE
 =============================== */
 
 .about-experience{
-    margin-top:20px;
+    margin-top:20px; /* jarak dari about text */
 }
 
 .experience-cards{
     display:flex;
-    flex-direction:column;
-    gap:16px;
+    flex-direction:column; /* card vertikal */
+    gap:16px; /* jarak antar card */
 }
 
 .card{
@@ -213,20 +226,20 @@ EXPERIENCE
 
     padding:16px 20px;
 
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,0.08); /* background transparan */
+    backdrop-filter:blur(10px); /* efek kaca */
 
     border-radius:16px;
     transition:.3s;
 }
 
 .card:hover{
-    transform:translateY(-4px);
+    transform:translateY(-4px); /* card naik sedikit */
     box-shadow:0 15px 35px rgba(0,0,0,0.35);
 }
 
 .experience-logo img{
-    width:50px;
+    width:50px; /* ukuran logo */
 }
 
 /* ===============================
@@ -234,7 +247,7 @@ FIND ME
 =============================== */
 
 .findme{
-    grid-column:1 / -1;
+    grid-column:1 / -1; /* mengambil seluruh lebar grid */
     margin-top:80px;
     display:flex;
     justify-content:center;
@@ -260,7 +273,7 @@ FIND ME
     margin:10px 0 20px;
 }
 
-/* social */
+/* icon sosial */
 
 .social-icons{
     display:flex;
@@ -298,7 +311,7 @@ TABLET
 @media (max-width:900px){
 
 .about-container{
-    grid-template-columns:1fr;
+    grid-template-columns:1fr; /* layout menjadi 1 kolom */
     text-align:center;
 }
 
