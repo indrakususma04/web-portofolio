@@ -19,10 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!aboutText) return;
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries) => {
+
         entries.forEach(entry => {
+
             if (entry.isIntersecting) {
 
+                /* animasi ketika masuk viewport */
                 anime({
                     targets: entry.target,
                     translateY: [40, 0],
@@ -31,12 +34,20 @@ document.addEventListener("DOMContentLoaded", () => {
                     easing: 'easeOutExpo'
                 });
 
-                observer.unobserve(entry.target);
+            } else {
+
+                /* reset animasi ketika keluar viewport */
+                entry.target.style.opacity = 0;
+                entry.target.style.transform = "translateY(40px)";
+
             }
+
         });
+
     }, {
-        threshold: 0.4
+        threshold: 0.3
     });
 
     observer.observe(aboutText);
+
 });
